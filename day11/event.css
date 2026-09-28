@@ -1,0 +1,12 @@
+.counter {
+  width: 200px;
+  height: 100px;
+  border: 1px solid black;
+  margin: 10px 0;
+}
+
+.all {
+  width: 100vw;
+  height: 100vh;
+  transition: background-color 0.5s;
+}
