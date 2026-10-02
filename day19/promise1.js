@@ -1,10 +1,14 @@
 const content = document.querySelector("#content");
 const btn = document.querySelector(".btn");
 
-btn.addEventListener("click", () => {
-  new Promise((success, fail) => {
+const makePromise = (content) => {
+  return new Promise((success) => {
     setTimeout(() => {
       success(content.value);
     }, 2000);
-  }).then((x) => alert(`${x}꿀맛!`));
+  });
+};
+
+makePromise(content).then((x) => {
+  alert(`${x}꿀맛!`);
 });

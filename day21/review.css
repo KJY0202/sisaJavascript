@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 48px clamp(20px, 5vw, 72px);
+  background: #f4f5ef;
+  color: #202c27;
+  font-family: "Trebuchet MS", "Malgun Gothic", sans-serif;
+}
+
+.menus {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 32px;
+}
+
+.menus button {
+  min-width: 104px;
+  padding: 12px 22px;
+  border: 1px solid #204a3b;
+  border-radius: 6px;
+  background: #204a3b;
+  color: #fff;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.menus button:hover {
+  transform: translateY(-2px);
+  background: #d5e5d7;
+  color: #204a3b;
+}
+
+.menus button:focus-visible {
+  outline: 3px solid #e78d63;
+  outline-offset: 3px;
+}
+
+.loading {
+  margin: 0 auto 20px;
+  color: #718078;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 20px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #dce2da;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 5px 16px rgb(32 44 39 / 7%);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgb(32 44 39 / 12%);
+}
+
+.album {
+  display: grid;
+  aspect-ratio: 4 / 3;
+  place-items: center;
+  overflow: hidden;
+  background: #e9eee7;
+}
+
+.album img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title,
+.price {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title {
+  padding: 16px 16px 6px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.price {
+  padding: 0 16px 16px;
+  color: #648071;
+  font-size: 14px;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 28px 16px;
+  }
+
+  .menus {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .menus button {
+    min-width: 0;
+    flex: 1;
+    padding: 11px 8px;
+  }
+
+  .items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
